@@ -1,5 +1,5 @@
 //
-//  ArticleTableViewCell.swift
+//  ArticleCollectionViewCell.swift
 //  SimpleNews
 //
 //  Created by Daniel Teodoro on 16/09/20.
@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class ArticleTableViewCell: UITableViewCell {
+class ArticleCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
 }
