@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--News List Collection View Controller-->
+        <!--Simple News-->
         <scene sceneID="0MC-JP-Vhq">
             <objects>
-                <collectionViewController id="izb-bC-6xp" customClass="NewsListCollectionViewController" customModule="SimpleNews" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController title="Simple News" id="izb-bC-6xp" customClass="NewsListCollectionViewController" customModule="SimpleNews" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="rBj-Pi-HPT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -23,23 +23,26 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ArticleCollectionViewCell" id="khc-nw-dXQ" customClass="ArticleCollectionViewCell" customModule="SimpleNews" customModuleProvider="target">
-                                <rect key="frame" x="82" y="0.0" width="250" height="275"/>
+                                <rect key="frame" x="0.0" y="0.0" width="68.5" height="275"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="XYw-Xb-2wx">
-                                    <rect key="frame" x="0.0" y="0.0" width="250" height="275"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="68.5" height="275"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0EX-XL-6am">
+                                            <rect key="frame" x="0.0" y="0.0" width="68.5" height="275"/>
+                                        </imageView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="jBF-eM-Dx1">
-                                            <rect key="frame" x="8" y="167" width="234" height="100"/>
+                                            <rect key="frame" x="8" y="167" width="52.5" height="100"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ryL-OH-yqx">
-                                                    <rect key="frame" x="0.0" y="0.0" width="234" height="71.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="52.5" height="71.5"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xCz-BP-Y4O">
-                                                    <rect key="frame" x="0.0" y="79.5" width="234" height="20.5"/>
+                                                    <rect key="frame" x="0.0" y="79.5" width="52.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -51,13 +54,17 @@
                                         </stackView>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="0EX-XL-6am" firstAttribute="leading" secondItem="XYw-Xb-2wx" secondAttribute="leading" id="02D-w1-N6u"/>
                                         <constraint firstAttribute="bottom" secondItem="jBF-eM-Dx1" secondAttribute="bottom" constant="8" id="AYV-m6-mAu"/>
+                                        <constraint firstAttribute="bottom" secondItem="0EX-XL-6am" secondAttribute="bottom" id="KtI-uK-TC0"/>
+                                        <constraint firstAttribute="trailing" secondItem="0EX-XL-6am" secondAttribute="trailing" id="a4N-2d-TDF"/>
+                                        <constraint firstItem="0EX-XL-6am" firstAttribute="top" secondItem="XYw-Xb-2wx" secondAttribute="top" id="bQh-ad-ZUL"/>
                                         <constraint firstItem="jBF-eM-Dx1" firstAttribute="leading" secondItem="XYw-Xb-2wx" secondAttribute="leading" constant="8" id="bhW-rP-rpM"/>
                                         <constraint firstAttribute="trailing" secondItem="jBF-eM-Dx1" secondAttribute="trailing" constant="8" id="rZs-l2-p1Q"/>
                                     </constraints>
                                 </collectionViewCellContentView>
-                                <size key="customSize" width="250" height="275"/>
                                 <connections>
+                                    <outlet property="backgroundImageView" destination="0EX-XL-6am" id="M8x-yi-W7q"/>
                                     <outlet property="descriptionLabel" destination="xCz-BP-Y4O" id="m1N-RH-Lle"/>
                                     <outlet property="titleLabel" destination="ryL-OH-yqx" id="aG8-x7-HAm"/>
                                 </connections>

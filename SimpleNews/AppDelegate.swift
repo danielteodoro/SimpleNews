@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         UINavigationBar.appearance().largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 47/255, green: 54/255, blue: 64/255, alpha: 1.0)]
+        UINavigationBar.appearance().tintColor = UIColor.black
         return true
     }
 

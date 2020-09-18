@@ -52,7 +52,24 @@ class NewsListCollectionViewController: UICollectionViewController {
         
         cell.titleLabel.text = articleVM.title
         cell.descriptionLabel.text = articleVM.description
+        cell.backgroundImageView.setImage(from: articleVM.backgroundImage)
         
         return cell
+    }
+}
+
+extension UIImageView {
+    func setImage(from url: String) {
+        guard let imageURL = URL(string: url) else { return }
+
+            // just not to cause a deadlock in UI!
+        DispatchQueue.global().async {
+            guard let imageData = try? Data(contentsOf: imageURL) else { return }
+
+            let image = UIImage(data: imageData)
+            DispatchQueue.main.async {
+                self.image = image
+            }
+        }
     }
 }
